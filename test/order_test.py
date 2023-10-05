@@ -23,4 +23,9 @@ def test_order_total():
         total = order.calculate_total()
         assert total == (3.50 * 2) + (2.00 * 3)
 
+def test_get_item_quantity_nonexistent():
+        menu = ProductList()
+        order = Order(menu)
+        quantity = order.get_item_quantity("Non-existent Product")
+        assert quantity == 0
 

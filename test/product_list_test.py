@@ -10,4 +10,4 @@ def test_get_product_price():
 def test_product_not_found():
         menu = ProductList()
         with pytest.raises(Exception):
-            menu.get_product_price("Non-existent Product")
+                menu.get_product_price("Non-existent Product")

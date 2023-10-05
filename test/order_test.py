@@ -1,18 +1,12 @@
-import unittest
+
 from lib.order import *
+from lib.product_list import *
 
-# class TestOrder(unittest.TestCase):
+def test_add_item_to_order():
+        menu = ProductList()
+        menu.add_product("Cafe Latte", 3.50)
 
-#     def test_add_item_to_order(self):
-#         order = Order()
-#         order.add_item("Cafe Latte", 2)
-#         self.assertEqual(order.get_item_quantity("Cafe Latte"), 2)
+        order = Order(menu)
+        order.add_item("Cafe Latte", 2)
 
-#     def test_order_total(self):
-#         order = Order()
-#         order.add_item("Cafe Latte", 2)
-#         order.add_item("Blueberry Muffin", 3)
-#         self.assertEqual(order.calculate_total(), 15.0)
-
-# if __name__ == '__main__':
-#     unittest.main()
+        assert order.get_item_quantity("Cafe Latte") == 2
